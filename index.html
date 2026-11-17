@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台股波段起漲突破雷達</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif; background: #f4f6f9; color: #222; margin: 0; padding: 16px; }
+        .container { max-width: 960px; margin: 0 auto; }
+        .header { background: #1a237e; color: #fff; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0 0 8px 0; font-size: 22px; }
+        .header p { margin: 0; font-size: 13px; opacity: 0.85; }
+        .stats { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .stat-card { background: #fff; padding: 14px 18px; border-radius: 10px; flex: 1; min-width: 140px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+        .stat-card .label { font-size: 12px; color: #666; }
+        .stat-card .val { font-size: 20px; font-weight: bold; color: #1a237e; margin-top: 4px; }
+        .search-box { width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 12px; font-size: 15px; }
+        .table-wrap { background: #fff; border-radius: 12px; overflow-x: auto; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; white-space: nowrap; }
+        th { background: #f8f9fa; color: #444; font-weight: 600; text-align: left; padding: 12px 14px; border-bottom: 2px solid #eee; }
+        td { padding: 12px 14px; border-bottom: 1px solid #f0f0f0; }
+        tr:hover { background: #f9fbff; }
+        .stock-link { color: #1565c0; text-decoration: none; font-weight: 600; }
+        .stock-link:hover { text-decoration: underline; }
+        .mkt { font-size: 11px; color: #888; margin-left: 4px; }
+        .badge { padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .badge.strong { background: #ffebee; color: #c62828; }
+        .badge.weak { background: #eceff1; color: #546e7a; }
+        .footer { text-align: center; font-size: 12px; color: #888; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📈 台股波段起漲突破雷達</h1>
+        <p>條件：MACD柱狀體由負翻正 ＋ 布林通道開口放大 ＋ 站上向上20日線（成交量 &gt; 500張）</p>
+    </div>
+    <div class="stats">
+        <div class="stat-card"><div class="label">最後更新時間 (台灣時間)</div><div class="val" style="font-size:16px;">2026-11-17 11:10</div></div>
+        <div class="stat-card"><div class="label">符合條件檔數</div><div class="val">2 檔</div></div>
+        <div class="stat-card"><div class="label">全市場掃描總數</div><div class="val">1988 檔</div></div>
+    </div>
+    <input type="text" id="filterInput" class="search-box" onkeyup="filterTable()" placeholder="🔍 輸入代號、股名或「零軸上」快速篩選...">
+    <div class="table-wrap">
+        <table id="stockTable">
+            <thead>
+                <tr>
+                    <th>代號 / 名稱 (點擊看線圖)</th>
+                    <th>收盤價</th>
+                    <th>漲跌幅</th>
+                    <th>20日線</th>
+                    <th>成交張數</th>
+                    <th>量比 (vs5日)</th>
+                    <th>MACD位置</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td><a href="https://tw.stock.yahoo.com/quote/4155" target="_blank" class="stock-link">4155 訊映</a><span class="mkt">上市</span></td>
+                <td><strong>18.3</strong></td>
+                <td style="color:#d93025;font-weight:bold;">+4.27%</td>
+                <td>17.07</td>
+                <td>1,218</td>
+                <td>0.98x</td>
+                <td><span class="badge strong">零軸上 (強)</span></td>
+            </tr>
+
+            <tr>
+                <td><a href="https://tw.stock.yahoo.com/quote/2880" target="_blank" class="stock-link">2880 華南金</a><span class="mkt">上市</span></td>
+                <td><strong>51.8</strong></td>
+                <td style="color:#d93025;font-weight:bold;">+2.17%</td>
+                <td>49.95</td>
+                <td>11,587</td>
+                <td>0.86x</td>
+                <td><span class="badge strong">零軸上 (強)</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">依「量比 (vs 5日均量)」由大到小排序 ｜ 僅供技術分析參考，投資請嚴守停損紀律</div>
+</div>
+<script>
+function filterTable() {
+    const filter = document.getElementById("filterInput").value.toUpperCase();
+    const rows = document.getElementById("stockTable").getElementsByTagName("tr");
+    for (let i = 1; i < rows.length; i++) {
+        const text = rows[i].textContent || rows[i].innerText;
+        rows[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+    }
+}
+</script>
+</body>
+</html>

@@ -74,9 +74,9 @@
         <p>MACD柱狀體翻正 ＋ 布林通道開口放大 ＋ 站上向上20日線</p>
     </div>
     <div class="stats">
-        <div class="stat-card"><div class="label">最後更新時間 (台灣時間)</div><div class="val" style="font-size:15px;">2026-11-25 03:01</div></div>
-        <div class="stat-card"><div class="label">符合條件檔數</div><div class="val">0 檔</div></div>
-        <div class="stat-card"><div class="label">全市場掃描總數</div><div class="val">1092 檔</div></div>
+        <div class="stat-card"><div class="label">最後更新時間 (台灣時間)</div><div class="val" style="font-size:15px;">2026-11-26 02:08</div></div>
+        <div class="stat-card"><div class="label">符合條件檔數</div><div class="val">4 檔</div></div>
+        <div class="stat-card"><div class="label">全市場掃描總數</div><div class="val">1987 檔</div></div>
     </div>
     <input type="text" id="filterInput" class="search-box" onkeyup="filterTable()" placeholder="🔍 輸入代號、股名或「零軸上」篩選...">
     <div class="table-wrap">
@@ -93,7 +93,58 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td colspan="7" style="text-align:center;padding:30px;color:#666;">今日無同時符合三大突破條件的標的（或今日為休市日）</td></tr>
+                
+            <tr>
+                <td class="cell-title" data-label="標的">
+                    <div><a href="https://tw.stock.yahoo.com/quote/1210" target="_blank" class="stock-link">1210 大成</a><span class="mkt">上市</span></div>
+                    <div class="mobile-price"><span class="m-close">52.0</span> <span style="color:#d93025;font-weight:bold;">(+5.05%)</span></div>
+                </td>
+                <td class="hide-mobile" data-label="收盤價"><strong>52.0</strong></td>
+                <td class="hide-mobile" data-label="漲跌幅" style="color:#d93025;font-weight:bold;">+5.05%</td>
+                <td data-label="20日線">50.79</td>
+                <td data-label="成交張數">2,787 張</td>
+                <td data-label="量比(vs5日)" style="color:#d93025;font-weight:bold;">1.56x</td>
+                <td data-label="MACD位置"><span class="badge weak">零軸下</span></td>
+            </tr>
+
+            <tr>
+                <td class="cell-title" data-label="標的">
+                    <div><a href="https://tw.stock.yahoo.com/quote/3551" target="_blank" class="stock-link">3551 世禾</a><span class="mkt">上櫃</span></div>
+                    <div class="mobile-price"><span class="m-close">178.5</span> <span style="color:#d93025;font-weight:bold;">(+9.85%)</span></div>
+                </td>
+                <td class="hide-mobile" data-label="收盤價"><strong>178.5</strong></td>
+                <td class="hide-mobile" data-label="漲跌幅" style="color:#d93025;font-weight:bold;">+9.85%</td>
+                <td data-label="20日線">165.97</td>
+                <td data-label="成交張數">563 張</td>
+                <td data-label="量比(vs5日)">1.1x</td>
+                <td data-label="MACD位置"><span class="badge weak">零軸下</span></td>
+            </tr>
+
+            <tr>
+                <td class="cell-title" data-label="標的">
+                    <div><a href="https://tw.stock.yahoo.com/quote/9925" target="_blank" class="stock-link">9925 新保</a><span class="mkt">上市</span></div>
+                    <div class="mobile-price"><span class="m-close">39.85</span> <span style="color:#d93025;font-weight:bold;">(+1.92%)</span></div>
+                </td>
+                <td class="hide-mobile" data-label="收盤價"><strong>39.85</strong></td>
+                <td class="hide-mobile" data-label="漲跌幅" style="color:#d93025;font-weight:bold;">+1.92%</td>
+                <td data-label="20日線">39.45</td>
+                <td data-label="成交張數">745 張</td>
+                <td data-label="量比(vs5日)">1.02x</td>
+                <td data-label="MACD位置"><span class="badge weak">零軸下</span></td>
+            </tr>
+
+            <tr>
+                <td class="cell-title" data-label="標的">
+                    <div><a href="https://tw.stock.yahoo.com/quote/3715" target="_blank" class="stock-link">3715 定穎投控</a><span class="mkt">上市</span></div>
+                    <div class="mobile-price"><span class="m-close">136.5</span> <span style="color:#d93025;font-weight:bold;">(+9.64%)</span></div>
+                </td>
+                <td class="hide-mobile" data-label="收盤價"><strong>136.5</strong></td>
+                <td class="hide-mobile" data-label="漲跌幅" style="color:#d93025;font-weight:bold;">+9.64%</td>
+                <td data-label="20日線">124.33</td>
+                <td data-label="成交張數">775 張</td>
+                <td data-label="量比(vs5日)">0.07x</td>
+                <td data-label="MACD位置"><span class="badge strong">零軸上(強)</span></td>
+            </tr>
             </tbody>
         </table>
     </div>
